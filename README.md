@@ -114,7 +114,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
-  { name: "Testimonials", link: "#testimonials" },
+  { name: "certificate", link: "#certificate" },
   { name: "Contact", link: "#contact" },
 ];
 

@@ -1,15 +1,17 @@
+import { link } from "fs";
+
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
-  { name: "Testimonials", link: "#testimonials" },
+  { name: "Certificate", link: "#certificate" },
   { name: "Contact", link: "#contact" },
 ];
 
 export const gridItems = [
   {
     id: 1,
-    title: "I prioritize client collaboration, fostering open communication ",
-    description: "",
+    title: "Collaboration that sparks results",
+    description: "I believe in open, iterative communication with clients.",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
     titleClassName: "justify-end",
@@ -18,7 +20,7 @@ export const gridItems = [
   },
   {
     id: 2,
-    title: "I'm very flexible with time zone communications",
+    title: "Seamless collaboration across time zones",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -38,7 +40,7 @@ export const gridItems = [
   },
   {
     id: 4,
-    title: "Tech enthusiast with a passion for development.",
+    title: "Driven by curiosity, fueled by code",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
@@ -49,8 +51,8 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "Currently building a JS Animation library",
-    description: "The Inside Scoop",
+    title: "Create a website that suits you",
+    description: " ",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
     titleClassName: "justify-center md:justify-start lg:justify-center",
@@ -59,7 +61,7 @@ export const gridItems = [
   },
   {
     id: 6,
-    title: "Do you want to start a project together?",
+    title: "Ready to craft something extraordinary together?",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
@@ -72,130 +74,193 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "3D Solar System Planets to Explore",
-    des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
-    img: "/p1.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "/ui.earth.com",
+    title: "ProLearn - Online Learning Platform",
+    des: "A modern online learning platform with a focus on user experience and performance, built with the latest technologies.",
+    img: "/ProLearn.png",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/js.svg"],
+    link: " ",
   },
   {
     id: 2,
-    title: "Yoom - Video Conferencing App",
-    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-    img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "/ui.yoom.com",
+    title: "Surf Lesson - Website for Surf Lessons",
+    des: "A platform connecting surf instructors with students for lessons in Bali.",
+    img: "/surf.png",
+    iconLists: ["wordpress.svg", "/css.svg"],
+    link: " ",
   },
   {
     id: 3,
-    title: "AI Image SaaS - Canva Application",
-    des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
-    img: "/p3.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "/ui.aiimg.com",
+    title: "WhosThat - Game Based On Website",
+    des: "A game-based website that allows users to play the popular Undercover game offline with friends.",
+    img: "/whosThat.png",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/firebase.svg"],
+    link: "https://whos-that.vercel.app/",
   },
   {
     id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-    img: "/p4.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "/ui.apple.com",
+    title: "Tetris - Classic Game Reimagined",
+    des: "Recreated the classic Tetris game using modern web technologies, featuring smooth animations and responsive design.",
+    img: "/tetris.png",
+    iconLists: ["/re.svg", "/tail.svg", "/js.svg", "/firebase.svg"],
+    link: "https://tetris-azure-nine.vercel.app/",
+  },
+  {
+    id: 5,
+    title: "Basketball - Website created In Native Language",
+    des: "Recreated the classic Basketball website using native language web technologies, featuring smooth animations and responsive design.",
+    img: "/basket.png",
+    iconLists: ["/html5.svg", "/css.svg", "/js.svg"],
+    link: "https://baskeball.vercel.app/",
+  },
+  {
+    id: 6,
+    title: "The D-seven - E-commerce Website",
+    des: "Recreated the classic Donut & Drink website using native language web technologies, featuring smooth animations and satisfying user interface.",
+    img: "/dseven.png",
+    iconLists: ["/html5.svg", "/css.svg", "/js.svg"],
+    link: "https://product-pi-two.vercel.app/",
+  },
+  {
+    id: 7,
+    title: "E-commerce Website Design",
+    des: "create an e-commerce website design for android from figma by considering user interface and experience.",
+    img: "/ecommerce.png",
+    iconLists: ["/figma.svg"],
+    link: "https://www.figma.com/proto/edtLCrYg7azM20nioXcmRi/Hairunn?node-id=2-3&starting-point-node-id=2%3A3&t=rAF1Uj5cd0gPCUc3-1",
+  },
+  {
+    id: 7,
+    title: "UPTPTKK - Recreate Website Design",
+    des: "Redesigning the website. Considering color palette, layout, and design structure",
+    img: "/upt.png",
+    iconLists: ["/figma.svg"],
+    link: "https://www.figma.com/proto/60m6rZ460kyJsbHb5i9kcD/Tugas-Akhir---Hairunisa-asanti?node-id=110-222&t=iDo1usSVqZ29h3Er-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
   },
 ];
 
-export const testimonials = [
+export const certificates = [
   {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+    quote: "/sertifikat_AI.jpg", 
+    name: "Certificate Title",
+    title: "Description of the certificate",
   },
   {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+    quote: "/sertifikat2.jpg",
+    name: "Certificate Title 2",
+    title: "Description of the certificate",
   },
   {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+    quote: "/sertifikat_WD.jpg",
+    name: "Certificate Title 2",
+    title: "Description of the certificate",
   },
 ];
+
 
 export const companies = [
   {
     id: 1,
-    name: "cloudinary",
-    img: "/cloud.svg",
-    nameImg: "/cloudName.svg",
+    name: "html5",
+    img: "/html5.svg",
   },
   {
     id: 2,
-    name: "appwrite",
-    img: "/app.svg",
-    nameImg: "/appName.svg",
+    name: "css",
+    img: "/css.svg",
   },
   {
     id: 3,
-    name: "HOSTINGER",
-    img: "/host.svg",
-    nameImg: "/hostName.svg",
+    name: "JavaScript",
+    img: "/js.svg",
   },
   {
     id: 4,
-    name: "stream",
-    img: "/s.svg",
-    nameImg: "/streamName.svg",
+    name: "TypeScript",
+    img: "/ts.svg",
   },
   {
     id: 5,
-    name: "docker.",
-    img: "/dock.svg",
-    nameImg: "/dockerName.svg",
+    name: "PHP",
+    img: "/php.svg",
+  },
+  {
+    id: 6,
+    name: "Java",
+    img: "/java.svg",
+  },
+  {
+    id: 7,
+    name: "Bootstrap",
+    img: "/bs.svg",
+  },
+  {
+    id: 8,
+    name: "Tailwind",
+    img: "/tail.svg",
+  },
+  {
+    id: 9,
+    name: "React",
+    img: "/re.svg",
+  },
+  {
+    id: 10,
+    name: "Laravel",
+    img: "/laravel.svg",
+  },
+  {
+    id: 11,
+    name: "MySQL",
+    img: "/mysql.svg",
+  },
+  {
+    id: 12,
+    name: "WordPress",
+    img: "/wordpress.svg",
+  },
+  {
+    id: 13,
+    name: "Figma",
+    img: "/figma.svg",
+  },
+  {
+    id: 14,
+    name: "Firebase",
+    img: "/firebase.svg",
+  },
+  {
+    id: 15,
+    name: "HOSTINGER",
+    img: "/host.svg",
   },
 ];
 
 export const workExperience = [
   {
     id: 1,
-    title: "Frontend Engineer Intern",
-    desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
+    title: "Frontend & Game Engineer Intern",
+    desc: "Played a role in building an interactive React.js web platform, boosting interactivity and usability",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
-    title: "Mobile App Dev - JSM Tech",
-    desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
-    className: "md:col-span-2", // change to md:col-span-2
+    title: "WordPress Website For client",
+    desc: "Designed and developed a responsive WordPress website, ensuring seamless navigation and client-specific customization",
+    className: "md:col-span-2",
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
-    title: "Freelance App Dev Project",
-    desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-    className: "md:col-span-2", // change to md:col-span-2
+    title: "National Web Design Certification",
+    desc: "Completed the National KKNI-Based Certification with top ranking in Web Design, demonstrating advanced design and implementation skills.",
+    className: "md:col-span-2",
     thumbnail: "/exp3.svg",
   },
   {
     id: 4,
-    title: "Lead Frontend Developer",
-    desc: "Developed and maintained user-facing features using modern frontend technologies.",
+    title: "Competition Training: Web Design & AI",
+    desc: "Completed a year-long intensive training in Web Design and AI for LKS Competition, earning 2nd place at the district level and Top 10 at the provincial level in AI, while developing advanced technical and problem-solving skills.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
   },
@@ -205,13 +270,11 @@ export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
+    link: "https://github.com/edgrce",
   },
   {
     id: 2,
-    img: "/twit.svg",
-  },
-  {
-    id: 3,
     img: "/link.svg",
+    link: "https://www.linkedin.com/in/hairunisa-asanti-asanti-9a5a2b34b/",
   },
 ];
