@@ -50,14 +50,14 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20 w-screen overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        "scroller relative z-20 w-full max-w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_15%,white_85%,transparent)]",
         className
       )}
     >
       <ul
         ref={scrollerRef}
         className={cn(
-          "flex min-w-full shrink-0 gap-16 py-4 w-max flex-nowrap",
+          "flex min-w-full shrink-0 gap-8 sm:gap-12 md:gap-16 py-4 w-max flex-nowrap",
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
@@ -65,11 +65,8 @@ export const InfiniteMovingCards = ({
         {items.map((item, idx) => (
           <li key={idx}>
             {type === "card" ? (
-              <div
-                className="w-[80vw] md:w-[30vw] flex-shrink-0 relative rounded-2xl border border-slate-800 p-4 md:p-6 flex flex-col items-center bg-[#0a0c1d]"
-                key={idx}
-              >
-                <div className="w-full aspect-video flex items-center justify-center overflow-hidden rounded-md">
+              <div className="w-[90vw] sm:w-[70vw] md:w-[40vw] lg:w-[30vw] flex-shrink-0 relative rounded-xl md:rounded-2xl border border-slate-800 p-4 md:p-6 flex flex-col items-center bg-[#0a0c1d]">
+                <div className="w-full max-h-48 sm:max-h-64 md:max-h-72 aspect-video flex items-center justify-center overflow-hidden rounded-md">
                   <img
                     src={item.quote}
                     alt={item.name}
@@ -77,20 +74,22 @@ export const InfiniteMovingCards = ({
                   />
                 </div>
                 <div className="text-center mt-4">
-                  <span className="block text-lg md:text-xl font-bold text-white">
+                  <span className="block text-base sm:text-lg md:text-xl font-bold text-white">
                     {item.name}
                   </span>
-                  <span className="block text-sm md:text-base text-gray-300">
+                  <span className="block text-xs sm:text-sm md:text-base text-gray-300">
                     {item.title}
                   </span>
                 </div>
               </div>
             ) : (
-              <img
-                src={item.quote}
-                alt={item.name || `logo-${idx}`}
-                className="h-16 w-auto object-contain"
-              />
+              <div className="flex items-center justify-center h-16 sm:h-20 md:h-24 aspect-square">
+                <img
+                  src={item.quote}
+                  alt={item.name || `logo-${idx}`}
+                  className="h-full w-auto object-contain"
+                />
+              </div>
             )}
           </li>
         ))}
@@ -98,3 +97,4 @@ export const InfiniteMovingCards = ({
     </div>
   );
 };
+export default InfiniteMovingCards;
