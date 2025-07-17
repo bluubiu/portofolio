@@ -78,7 +78,6 @@ export const projects = [
     des: "A modern online learning platform with a focus on user experience and performance, built with the latest technologies.",
     img: "/ProLearn.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/js.svg"],
-    link: " ",
   },
   {
     id: 2,
@@ -86,7 +85,6 @@ export const projects = [
     des: "A platform connecting surf instructors with students for lessons in Bali.",
     img: "/surf.png",
     iconLists: ["wordpress.svg", "/css.svg"],
-    link: " ",
   },
   {
     id: 3,
@@ -140,19 +138,52 @@ export const projects = [
 
 export const certificates = [
   {
-    quote: "/sertifikat_AI.jpg", 
-    name: "Certificate Title",
-    title: "Description of the certificate",
+    quote: "/sertifikat_AI.jpg",
+    name: "Provincial AI Competition Participant",
+    title:
+      "Awarded for participation in the Artificial Intelligence category at the 33rd Provincial Level Student Competency Competition (LKS) in East Java, organized by the East Java Provincial Education Office.",
   },
   {
     quote: "/sertifikat2.jpg",
-    name: "Certificate Title 2",
-    title: "Description of the certificate",
+    name: "COBIT 2019 Workshop Attendee",
+    title:
+      "Participated in the workshop 'COBIT 2019: IT Strategies to Build Trust with Directors and Companies Through Measurable Resource Governance,' held in Yogyakarta (2 JPL hours).",
   },
   {
     quote: "/sertifikat_WD.jpg",
-    name: "Certificate Title 2",
-    title: "Description of the certificate",
+    name: "Certified Web Designer (Level IV IQF)",
+    title:
+      "Officially recognized as competent in Web Design (Level IV of the Indonesian Qualification Framework) by the Competency Certification Board of Information and Communication Technologies.",
+  },
+  {
+    quote: "/Data_Visualization.png",
+    name: "Data Visualization Course Completion",
+    title:
+      "Successfully completed the 'Data Visualization' course on Kaggle, mastering techniques to present data insights effectively.",
+  },
+  {
+    quote: "/MachineLearning.png",
+    name: "Intermediate Machine Learning Course Completion",
+    title:
+      "Completed Kaggle's 'Intermediate Machine Learning' course, covering advanced topics in model evaluation, feature engineering, and pipelines.",
+  },
+  {
+    quote: "/ubig.jpg",
+    name: "Chatbot AI Workshop & Industrial Visit",
+    title:
+      "Participated in a NoBox AI Chatbot Development Workshop and industrial visit at PT Universal Big Data (UBIG), gaining hands-on experience in AI applications.",
+  },
+  {
+    quote: "/wd1.jpg",
+    name: "National Accelerated Web Design Certification",
+    title:
+      "Awarded for completing the accelerated Web Design certification program (KKNI National Standard) organized by the East Java Provincial Technical and Vocational Development Unit.",
+  },
+  {
+    quote: "/wd2.jpg",
+    name: "Software Engineering/Web Design Incubator Program",
+    title:
+      "Recognized for participation in the 3rd Cohort of the SMK/SMA Competency Development Program (Incubator) in Software Engineering/Web Design by East Java's Vocational Development Unit.",
   },
 ];
 
