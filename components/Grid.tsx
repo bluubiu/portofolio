@@ -7,7 +7,7 @@ const Grid = () => {
       <BentoGrid className="w-full py-20">
         {gridItems.map((item, i) => (
           <BentoGridItem
-            id={item.id}
+            id={item.id.toString()}
             key={i}
             title={item.title}
             description={item.description}
