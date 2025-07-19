@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { cn } from "@/lib/utils";
@@ -50,7 +50,12 @@ export const BentoGridItem = ({
   const leftLists = ["Tailwind", "React", "Typescript"];
   const rightLists = ["Firebase", "Javascript", "GraphQL"];
   const [copied, setCopied] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const playerRef = useRef<Player>(null);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const handleCopy = () => {
     const text = "nisaasanti8@gmail.com";
@@ -161,8 +166,7 @@ export const BentoGridItem = ({
                   {leftLists.map((item, i) => (
                     <span
                       key={i}
-                      className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                      lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                      className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
                     >
                       {item}
                     </span>
@@ -174,8 +178,7 @@ export const BentoGridItem = ({
                   {rightLists.map((item, i) => (
                     <span
                       key={i}
-                      className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                      lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                      className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
                     >
                       {item}
                     </span>
@@ -187,13 +190,15 @@ export const BentoGridItem = ({
             {id === 6 && (
               <div className="mt-5 relative">
                 <div className="absolute -bottom-5 right-0">
-                  <Player
-                    ref={playerRef}
-                    autoplay={false}
-                    loop = {false}
-                    src={animationData}
-                    style={{ height: "200px", width: "400px" }}
-                  />
+                  {isClient && (
+                    <Player
+                      ref={playerRef}
+                      autoplay={false}
+                      loop={false}
+                      src={animationData}
+                      style={{ height: "200px", width: "400px" }}
+                    />
+                  )}
                 </div>
 
                 <MagicButton
