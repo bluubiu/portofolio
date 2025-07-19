@@ -23,7 +23,7 @@ export const BentoGrid: React.FC<BentoGridProps> = ({
 };
 
 interface BentoGridItemProps {
-  id?: string;
+  id?: number; 
   title: string;
   description: string;
   className?: string;
@@ -45,7 +45,7 @@ export const BentoGridItem: React.FC<BentoGridItemProps> = ({
 }) => {
   return (
     <div
-      id={id}
+      id={id !== undefined ? `bento-${id}` : undefined} 
       className={clsx(
         "relative flex flex-col justify-between p-6 rounded-2xl border border-white/[0.1] bg-black/[0.4] backdrop-blur-md transition-all hover:scale-[1.02]",
         className
