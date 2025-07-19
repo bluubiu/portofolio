@@ -24,54 +24,64 @@ export const InfiniteMovingCards = ({
   type?: "card" | "logo";
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const scrollerRef = useRef<HTMLUListElement>(null); 
-
+  const scrollerRef = useRef<HTMLUListElement>(null);
   const [start, setStart] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    addAnimation();
+    setIsClient(true);
+
+    if (
+      typeof window !== "undefined" &&
+      containerRef.current &&
+      scrollerRef.current
+    ) {
+      addAnimation();
+    }
   }, []);
 
   const addAnimation = () => {
-    if (containerRef.current && scrollerRef.current) {
-      const scrollerContent = Array.from(scrollerRef.current.children);
+    if (!scrollerRef.current) return;
 
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true);
-        if (scrollerRef.current) {
-          scrollerRef.current.appendChild(duplicatedItem);
-        }
-      });
+    const scrollerContent = Array.from(scrollerRef.current.children);
+    scrollerContent.forEach((item) => {
+      const duplicatedItem = item.cloneNode(true);
+      scrollerRef.current?.appendChild(duplicatedItem);
+    });
 
-      getDirection();
-      getSpeed();
-      setStart(true);
-    }
+    getDirection();
+    getSpeed();
+    setStart(true);
   };
 
   const getDirection = () => {
-    if (scrollerRef.current) {
-      if (direction === "left") {
-        scrollerRef.current.classList.remove("animate-scrollRight");
-        scrollerRef.current.classList.add("animate-scrollLeft");
-      } else {
-        scrollerRef.current.classList.remove("animate-scrollLeft");
-        scrollerRef.current.classList.add("animate-scrollRight");
-      }
+    if (!scrollerRef.current) return;
+
+    scrollerRef.current.classList.remove(
+      "animate-scrollLeft",
+      "animate-scrollRight"
+    );
+
+    if (direction === "left") {
+      scrollerRef.current.classList.add("animate-scrollLeft");
+    } else {
+      scrollerRef.current.classList.add("animate-scrollRight");
     }
   };
 
   const getSpeed = () => {
-    if (scrollerRef.current) {
-      if (speed === "fast") {
-        scrollerRef.current.style.animationDuration = "20s";
-      } else if (speed === "slow") {
-        scrollerRef.current.style.animationDuration = "60s";
-      } else {
-        scrollerRef.current.style.animationDuration = "40s";
-      }
+    if (!scrollerRef.current) return;
+
+    if (speed === "fast") {
+      scrollerRef.current.style.animationDuration = "20s";
+    } else if (speed === "slow") {
+      scrollerRef.current.style.animationDuration = "60s";
+    } else {
+      scrollerRef.current.style.animationDuration = "40s";
     }
   };
+
+  if (!isClient) return null;
 
   return (
     <div
@@ -146,10 +156,6 @@ export const InfiniteMovingCards = ({
 
         .animate-scrollRight {
           animation: scrollRight linear infinite;
-        }
-
-        .animate-scroll {
-          animation: scrollLeft linear infinite;
         }
       `}</style>
     </div>
