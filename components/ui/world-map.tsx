@@ -3,37 +3,27 @@
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { useMemo, useRef } from "react";
-import  DottedMap  from "dotted-map";
+import DottedMap from "dotted-map";
 
 interface Dot {
   start: {
     lat: number;
     lng: number;
-    label: string;
+    label?: string;
   };
   end: {
     lat: number;
     lng: number;
-    label: string;
+    label?: string;
   };
 }
 
-const dots: Dot[] = [
-  {
-    start: { lat: -6.2, lng: 106.816666, label: "Jakarta" },
-    end: { lat: -7.797068, lng: 110.370529, label: "Yogyakarta" },
-  },
-  {
-    start: { lat: -6.2, lng: 106.816666, label: "Jakarta" },
-    end: { lat: -6.914864, lng: 107.608238, label: "Bandung" },
-  },
-  {
-    start: { lat: -6.2, lng: 106.816666, label: "Jakarta" },
-    end: { lat: -8.409518, lng: 115.188919, label: "Bali" },
-  },
-];
+interface WorldMapProps {
+  dots: Dot[];
+  lineColor: string;
+}
 
-const WorldMap = () => {
+const WorldMap = ({ dots, lineColor }: WorldMapProps) => {
   const { theme } = useTheme();
   const svgRef = useRef<SVGSVGElement>(null);
 
@@ -55,8 +45,6 @@ const WorldMap = () => {
     const y = (90 - lat) * (height / 180);
     return { x, y };
   };
-
-  const lineColor = theme === "dark" ? "#ffffff" : "#000000";
 
   return (
     <div className="relative w-full h-full max-w-6xl mx-auto">

@@ -132,7 +132,7 @@ export const BentoGridItem = ({
           </div>
         )}
 
-        {id === 6 && <div className="absolute inset-0 z-0"></div>}
+        {id === 6 && <div className="absolute inset-0 z-0" />}
 
         {id && (
           <div
