@@ -24,7 +24,7 @@ export const InfiniteMovingCards = ({
   type?: "card" | "logo";
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const scrollerRef = useRef<HTMLDivElement>(null);
+  const scrollerRef = useRef<HTMLUListElement>(null); 
 
   const [start, setStart] = useState(false);
 
