@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { cn } from "@/lib/utils";
@@ -50,11 +50,16 @@ export const BentoGridItem = ({
   const leftLists = ["Tailwind", "React", "Typescript"];
   const rightLists = ["Firebase", "Javascript", "GraphQL"];
   const [copied, setCopied] = useState(false);
+  const playerRef = useRef<Player>(null);
 
   const handleCopy = () => {
     const text = "nisaasanti8@gmail.com";
     navigator.clipboard.writeText(text);
     setCopied(true);
+
+    if (playerRef.current) {
+      playerRef.current.play();
+    }
   };
 
   return (
@@ -183,8 +188,9 @@ export const BentoGridItem = ({
               <div className="mt-5 relative">
                 <div className="absolute -bottom-5 right-0">
                   <Player
-                    autoplay
-                    loop
+                    ref={playerRef}
+                    autoplay={false}
+                    loop = {false}
                     src={animationData}
                     style={{ height: "200px", width: "400px" }}
                   />
