@@ -2,13 +2,13 @@
 
 import { useState, useRef, useEffect } from "react";
 import { IoCopyOutline } from "react-icons/io5";
-import { Player } from "@lottiefiles/react-lottie-player";
 import { cn } from "@/lib/utils";
 import animationData from "@/data/confetti.json";
 import WorldMap from "./world-map";
 import GridGlobe from "./GridGlobe";
 import dynamic from "next/dynamic";
 import MagicButton from "../MagicButton";
+
 const LottiePlayer = dynamic(() => import("./LottiePlayerClient"), {
   ssr: false,
 });
@@ -55,7 +55,7 @@ export const BentoGridItem = ({
   const rightLists = ["Firebase", "Javascript", "GraphQL"];
   const [copied, setCopied] = useState(false);
   const [isClient, setIsClient] = useState(false);
-  const playerRef = useRef<Player>(null);
+  const playerRef = useRef<any>(null);
 
   useEffect(() => {
     setIsClient(true);
