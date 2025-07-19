@@ -48,7 +48,6 @@ const WorldMap = ({ dots, lineColor }: WorldMapProps) => {
 
   return (
     <div className="relative w-full h-full max-w-6xl mx-auto">
-      {/* Background Map */}
       <img
         src={`data:image/svg+xml;utf8,${encodeURIComponent(mapSVG)}`}
         alt="Map"
@@ -56,7 +55,6 @@ const WorldMap = ({ dots, lineColor }: WorldMapProps) => {
         loading="lazy"
       />
 
-      {/* Animated Paths & Dots */}
       <svg
         ref={svgRef}
         viewBox={`0 0 ${width} ${height}`}

@@ -2,12 +2,19 @@
 
 import { useState, useRef, useEffect } from "react";
 import { IoCopyOutline } from "react-icons/io5";
-import { Player } from "@lottiefiles/react-lottie-player";
+import dynamic from "next/dynamic";
 import { cn } from "@/lib/utils";
 import animationData from "@/data/confetti.json";
 import WorldMap from "./world-map";
 import GridGlobe from "./GridGlobe";
 import MagicButton from "../MagicButton";
+
+const Player = dynamic(
+  () => import("@lottiefiles/react-lottie-player").then((mod) => mod.Player),
+  {
+    ssr: false,
+  }
+);
 
 export const BentoGrid = ({
   className,
@@ -51,19 +58,20 @@ export const BentoGridItem = ({
   const rightLists = ["Firebase", "Javascript", "GraphQL"];
   const [copied, setCopied] = useState(false);
   const [isClient, setIsClient] = useState(false);
-  const playerRef = useRef<Player>(null);
+  const playerRef = useRef<any>(null);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
 
   const handleCopy = () => {
-    const text = "nisaasanti8@gmail.com";
-    navigator.clipboard.writeText(text);
-    setCopied(true);
-
-    if (playerRef.current) {
-      playerRef.current.play();
+    if (typeof window !== "undefined" && navigator.clipboard) {
+      navigator.clipboard.writeText("nisaasanti8@gmail.com").then(() => {
+        setCopied(true);
+        if (playerRef.current) {
+          playerRef.current.play();
+        }
+      });
     }
   };
 
@@ -74,8 +82,7 @@ export const BentoGridItem = ({
         className
       )}
       style={{
-        background: "rgb(4,7,29)",
-        backgroundColor:
+        background:
           "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
       }}
     >
@@ -187,18 +194,16 @@ export const BentoGridItem = ({
               </div>
             )}
 
-            {id === 6 && (
+            {isClient && id === 6 && (
               <div className="mt-5 relative">
                 <div className="absolute -bottom-5 right-0">
-                  {isClient && (
-                    <Player
-                      ref={playerRef}
-                      autoplay={false}
-                      loop={false}
-                      src={animationData}
-                      style={{ height: "200px", width: "400px" }}
-                    />
-                  )}
+                  <Player
+                    ref={playerRef}
+                    autoplay={false}
+                    loop={false}
+                    src={animationData}
+                    style={{ height: "200px", width: "400px" }}
+                  />
                 </div>
 
                 <MagicButton
