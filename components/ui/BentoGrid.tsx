@@ -7,7 +7,11 @@ import { cn } from "@/lib/utils";
 import animationData from "@/data/confetti.json";
 import WorldMap from "./world-map";
 import GridGlobe from "./GridGlobe";
+import dynamic from "next/dynamic";
 import MagicButton from "../MagicButton";
+const LottiePlayer = dynamic(() => import("./LottiePlayerClient"), {
+  ssr: false,
+});
 
 export const BentoGrid = ({
   className,
@@ -191,8 +195,8 @@ export const BentoGridItem = ({
               <div className="mt-5 relative">
                 <div className="absolute -bottom-5 right-0">
                   {isClient && (
-                    <Player
-                      ref={playerRef as any} 
+                    <LottiePlayer
+                      ref={playerRef}
                       autoplay={false}
                       loop={false}
                       src={animationData}
