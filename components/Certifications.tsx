@@ -8,20 +8,17 @@ const Certificate = () => {
   return (
     <section
       id="certificate"
-      className="py-20 px-4 sm:px-6 lg:px-8 overflow-x-hidden"
+      className="py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
-      {/* Section Title */}
       <h1 className="heading text-center">
-        My journey of
-        <span className="text-purple"> certifications</span>
+        My journey of <span className="text-purple">certifications</span>
       </h1>
 
-      <div className="flex flex-col items-center gap-10 mt-10 w-full">
-        {/* Certificates Infinite Moving Cards */}
+      <div className="flex flex-col items-center gap-16 mt-12 w-full">
         <div className="w-full flex justify-center">
           <div
-            className="w-full max-w-7xl rounded-md flex items-center justify-center relative overflow-hidden
-              h-[30rem] sm:h-[34rem] md:h-[38rem] lg:h-[42rem]"
+            className="w-full max-w-7xl rounded-lg flex items-center justify-center relative overflow-hidden
+              h-[28rem] sm:h-[32rem] md:h-[36rem] lg:h-[40rem] px-2"
           >
             <InfiniteMovingCards
               items={certificates}
@@ -33,11 +30,10 @@ const Certificate = () => {
           </div>
         </div>
 
-        {/* Companies Infinite Moving Cards */}
         <div className="w-full flex justify-center">
           <div
-            className="w-full max-w-7xl rounded-md flex items-center justify-center relative overflow-hidden
-              h-[10rem] sm:h-[12rem] md:h-[14rem] lg:h-[16rem]"
+            className="w-full max-w-7xl rounded-lg flex items-center justify-center relative overflow-hidden
+              h-[10rem] sm:h-[12rem] md:h-[14rem] lg:h-[16rem] px-2"
           >
             <InfiniteMovingCards
               items={companies.map((c) => ({
