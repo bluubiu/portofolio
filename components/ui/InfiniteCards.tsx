@@ -1,98 +1,117 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
+import React, { useEffect, useRef, useState } from "react";
 
 interface Item {
-  quote: string;
-  name?: string;
-  title?: string;
+  quote: string; // image src or logo
+  name: string;
+  title: string;
 }
 
 export const InfiniteMovingCards = ({
   items,
   direction = "left",
-  speed = "fast",
+  speed = "normal",
   pauseOnHover = true,
-  type = "card",
   className,
+  type = "card",
 }: {
   items: Item[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
   pauseOnHover?: boolean;
-  type?: "card" | "logo";
   className?: string;
+  type?: "card" | "logo";
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const scrollerRef = useRef<HTMLUListElement>(null);
+  const scrollerRef = useRef<HTMLDivElement>(null);
+
   const [start, setStart] = useState(false);
 
   useEffect(() => {
-    const container = containerRef.current;
-    const scroller = scrollerRef.current;
-    if (!container || !scroller) return;
+    addAnimation();
+  }, []);
 
-    const originals = Array.from(scroller.children);
-    originals.forEach((child) => {
-      scroller.appendChild(child.cloneNode(true));
-    });
+  const addAnimation = () => {
+    if (containerRef.current && scrollerRef.current) {
+      const scrollerContent = Array.from(scrollerRef.current.children);
 
-    container.style.setProperty(
-      "--animation-direction",
-      direction === "left" ? "forwards" : "reverse"
-    );
-    container.style.setProperty(
-      "--animation-duration",
-      speed === "fast" ? "20s" : speed === "normal" ? "40s" : "80s"
-    );
+      scrollerContent.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true);
+        if (scrollerRef.current) {
+          scrollerRef.current.appendChild(duplicatedItem);
+        }
+      });
 
-    setStart(true);
-  }, [direction, speed]);
+      getDirection();
+      getSpeed();
+      setStart(true);
+    }
+  };
+
+  const getDirection = () => {
+    if (scrollerRef.current) {
+      if (direction === "left") {
+        scrollerRef.current.classList.remove("animate-scrollRight");
+        scrollerRef.current.classList.add("animate-scrollLeft");
+      } else {
+        scrollerRef.current.classList.remove("animate-scrollLeft");
+        scrollerRef.current.classList.add("animate-scrollRight");
+      }
+    }
+  };
+
+  const getSpeed = () => {
+    if (scrollerRef.current) {
+      if (speed === "fast") {
+        scrollerRef.current.style.animationDuration = "20s";
+      } else if (speed === "slow") {
+        scrollerRef.current.style.animationDuration = "60s";
+      } else {
+        scrollerRef.current.style.animationDuration = "40s";
+      }
+    }
+  };
 
   return (
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative w-full overflow-hidden",
-        "[mask-image:linear-gradient(to_right,transparent,white_15%,white_85%,transparent)]",
+        "scroller relative z-20 max-w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
         className
       )}
     >
       <ul
         ref={scrollerRef}
         className={cn(
-          "flex gap-8 py-4 whitespace-nowrap",
+          "flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
         {items.map((item, idx) => (
-          <li key={idx} className="inline-block">
+          <li key={idx} className="w-auto max-w-full">
             {type === "card" ? (
-              <div className="w-[90vw] sm:w-[70vw] md:w-[40vw] lg:w-[30vw] p-4 md:p-6 bg-[#0a0c1d] border border-slate-800 rounded-2xl flex-shrink-0">
-                <div className="aspect-video w-full flex items-center justify-center mb-4 overflow-hidden rounded-md">
+              <div className="w-[280px] sm:w-[320px] md:w-[360px] bg-[#0f0f1b] rounded-xl shadow-lg p-4 flex-shrink-0 text-white text-center transition-all duration-300 hover:scale-[1.03] hover:shadow-xl">
+                <div className="relative w-full h-40 mb-4 rounded-md overflow-hidden border border-slate-800">
                   <img
                     src={item.quote}
                     alt={item.name}
-                    className="object-contain max-w-full max-h-full"
+                    className="w-full h-full object-contain object-top"
                   />
                 </div>
-                <div className="text-center space-y-2">
-                  <h3 className="text-lg md:text-xl font-bold text-white">
-                    {item.name}
-                  </h3>
-                  <p className="text-sm md:text-base text-gray-300 text-justify leading-relaxed">
-                    {item.title}
-                  </p>
-                </div>
+                <h3 className="font-semibold text-base sm:text-lg">
+                  {item.name}
+                </h3>
+                <p className="text-sm mt-2 text-white/70">{item.title}</p>
               </div>
             ) : (
-              <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 flex items-center justify-center bg-[#0a0c1d] rounded-xl border border-slate-800">
+              <div className="flex h-[6rem] w-[12rem] items-center justify-center rounded-2xl border border-slate-800 bg-black px-8 py-4">
                 <img
                   src={item.quote}
                   alt={item.name}
-                  className="object-contain max-w-full max-h-full"
+                  className="max-h-full max-w-full object-contain"
                 />
               </div>
             )}
@@ -102,5 +121,3 @@ export const InfiniteMovingCards = ({
     </div>
   );
 };
-
-export default InfiniteMovingCards;
