@@ -1,7 +1,13 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+
+interface Item {
+  quote: string; // image src or logo
+  name: string;
+  title: string;
+}
 
 export const InfiniteMovingCards = ({
   items,
@@ -11,79 +17,81 @@ export const InfiniteMovingCards = ({
   type = "card",
   className,
 }: {
-  items: {
-    quote: string; // image src for logo mode
-    name: string;
-    title: string;
-  }[];
+  items: Item[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
   pauseOnHover?: boolean;
   type?: "card" | "logo";
   className?: string;
 }) => {
-  const containerRef = React.useRef<HTMLDivElement>(null);
-  const scrollerRef = React.useRef<HTMLUListElement>(null);
-
+  const containerRef = useRef<HTMLDivElement>(null);
+  const scrollerRef = useRef<HTMLUListElement>(null);
   const [start, setStart] = useState(false);
 
   useEffect(() => {
-    if (containerRef.current && scrollerRef.current) {
-      const scrollerContent = Array.from(scrollerRef.current.children);
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true);
-        scrollerRef.current!.appendChild(duplicatedItem);
-      });
-      containerRef.current.style.setProperty(
-        "--animation-direction",
-        direction === "left" ? "forwards" : "reverse"
-      );
-      containerRef.current.style.setProperty(
-        "--animation-duration",
-        speed === "fast" ? "20s" : speed === "normal" ? "40s" : "80s"
-      );
-      setStart(true);
-    }
-  }, []);
+    const container = containerRef.current;
+    const scroller = scrollerRef.current;
+    if (!container || !scroller) return;
+
+    // Duplicate items for infinite scroll effect
+    const originals = Array.from(scroller.children);
+    originals.forEach((child) => {
+      scroller.appendChild(child.cloneNode(true));
+    });
+
+    // Set CSS variables for animation
+    container.style.setProperty(
+      "--animation-direction",
+      direction === "left" ? "forwards" : "reverse"
+    );
+    container.style.setProperty(
+      "--animation-duration",
+      speed === "fast" ? "20s" : speed === "normal" ? "40s" : "80s"
+    );
+
+    // Start animation
+    setStart(true);
+  }, [direction, speed]);
 
   return (
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20 w-full max-w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_15%,white_85%,transparent)]",
+        "scroller relative w-full overflow-hidden",
+        "[mask-image:linear-gradient(to_right,transparent,white_15%,white_85%,transparent)]",
         className
       )}
     >
       <ul
         ref={scrollerRef}
         className={cn(
-          "flex min-w-full shrink-0 gap-8 sm:gap-12 md:gap-16 py-4 w-max flex-nowrap",
+          "flex gap-8 py-4 whitespace-nowrap",
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
         {items.map((item, idx) => (
-          <li key={idx}>
+          <li key={idx} className="inline-block">
             {type === "card" ? (
-              <div className="w-[90vw] sm:w-[70vw] md:w-[40vw] lg:w-[30vw] flex-shrink-0 relative rounded-xl md:rounded-2xl border border-slate-800 p-4 md:p-6 flex flex-col items-center bg-[#0a0c1d]">
-                <div className="w-full max-h-48 sm:max-h-64 md:max-h-72 aspect-video flex items-center justify-center overflow-hidden rounded-md">
+              <div className="w-[90vw] sm:w-[70vw] md:w-[40vw] lg:w-[30vw] p-4 md:p-6 bg-[#0a0c1d] border border-slate-800 rounded-xl md:rounded-2xl flex-shrink-0">
+                <div className="aspect-video w-full flex items-center justify-center mb-4 overflow-hidden rounded-md">
                   <img
                     src={item.quote}
                     alt={item.name}
-                    className="object-contain max-h-full max-w-full"
+                    className="object-contain max-w-full max-h-full"
                   />
                 </div>
-                <div className="text-center mt-4">
-                  <span className="block text-base sm:text-lg md:text-xl font-bold text-white">
+                <div className="text-center">
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-white">
                     {item.name}
-                  </span>
-                  <span className="block text-xs sm:text-sm md:text-base text-gray-300">
+                  </h3>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-300">
                     {item.title}
-                  </span>
+                  </p>
                 </div>
               </div>
             ) : (
-              <div className="flex items-center justify-center h-16 sm:h-20 md:h-24 aspect-square">
+              <div className="flex items-center justify-center h-16 sm:h-20 md:h-24 aspect-square inline-block">
                 <img
                   src={item.quote}
                   alt={item.name || `logo-${idx}`}
@@ -97,4 +105,5 @@ export const InfiniteMovingCards = ({
     </div>
   );
 };
+
 export default InfiniteMovingCards;
