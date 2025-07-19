@@ -1,5 +1,3 @@
-import { link } from "fs";
-
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
@@ -48,7 +46,6 @@ export const gridItems = [
     img: "/grid.svg",
     spareImg: "/b4.svg",
   },
-
   {
     id: 5,
     title: "Create a website that suits you",
@@ -127,7 +124,7 @@ export const projects = [
     link: "https://www.figma.com/proto/edtLCrYg7azM20nioXcmRi/Hairunn?node-id=2-3&starting-point-node-id=2%3A3&t=rAF1Uj5cd0gPCUc3-1",
   },
   {
-    id: 7,
+    id: 8,
     title: "UPTPTKK - Recreate Website Design",
     des: "Redesigning the website. Considering color palette, layout, and design structure",
     img: "/upt.png",
@@ -187,83 +184,22 @@ export const certificates = [
   },
 ];
 
-
 export const companies = [
-  {
-    id: 1,
-    name: "html5",
-    img: "/html5.svg",
-  },
-  {
-    id: 2,
-    name: "css",
-    img: "/css.svg",
-  },
-  {
-    id: 3,
-    name: "JavaScript",
-    img: "/js.svg",
-  },
-  {
-    id: 4,
-    name: "TypeScript",
-    img: "/ts.svg",
-  },
-  {
-    id: 5,
-    name: "PHP",
-    img: "/php.svg",
-  },
-  {
-    id: 6,
-    name: "Java",
-    img: "/java.svg",
-  },
-  {
-    id: 7,
-    name: "Bootstrap",
-    img: "/bs.svg",
-  },
-  {
-    id: 8,
-    name: "Tailwind",
-    img: "/tail.svg",
-  },
-  {
-    id: 9,
-    name: "React",
-    img: "/re.svg",
-  },
-  {
-    id: 10,
-    name: "Laravel",
-    img: "/laravel.svg",
-  },
-  {
-    id: 11,
-    name: "MySQL",
-    img: "/mysql.svg",
-  },
-  {
-    id: 12,
-    name: "WordPress",
-    img: "/wordpress.svg",
-  },
-  {
-    id: 13,
-    name: "Figma",
-    img: "/figma.svg",
-  },
-  {
-    id: 14,
-    name: "Firebase",
-    img: "/firebase.svg",
-  },
-  {
-    id: 15,
-    name: "HOSTINGER",
-    img: "/host.svg",
-  },
+  { id: 1, name: "html5", img: "/html5.svg" },
+  { id: 2, name: "css", img: "/css.svg" },
+  { id: 3, name: "JavaScript", img: "/js.svg" },
+  { id: 4, name: "TypeScript", img: "/ts.svg" },
+  { id: 5, name: "PHP", img: "/php.svg" },
+  { id: 6, name: "Java", img: "/java.svg" },
+  { id: 7, name: "Bootstrap", img: "/bs.svg" },
+  { id: 8, name: "Tailwind", img: "/tail.svg" },
+  { id: 9, name: "React", img: "/re.svg" },
+  { id: 10, name: "Laravel", img: "/laravel.svg" },
+  { id: 11, name: "MySQL", img: "/mysql.svg" },
+  { id: 12, name: "WordPress", img: "/wordpress.svg" },
+  { id: 13, name: "Figma", img: "/figma.svg" },
+  { id: 14, name: "Firebase", img: "/firebase.svg" },
+  { id: 15, name: "HOSTINGER", img: "/host.svg" },
 ];
 
 export const workExperience = [
