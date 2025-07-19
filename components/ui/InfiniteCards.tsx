@@ -1,10 +1,9 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import React, { useEffect, useRef, useState } from "react";
 
 interface Item {
-  quote: string; // image src or logo
+  quote: string;
   name: string;
   title: string;
 }
@@ -77,18 +76,13 @@ export const InfiniteMovingCards = ({
   return (
     <div
       ref={containerRef}
-      className={cn(
-        "scroller relative z-20 max-w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
-        className
-      )}
+      className={`scroller relative z-20 max-w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)] ${className}`}
     >
       <ul
         ref={scrollerRef}
-        className={cn(
-          "flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
-          start && "animate-scroll",
-          pauseOnHover && "hover:[animation-play-state:paused]"
-        )}
+        className={`flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap ${
+          start && "animate-scroll"
+        } ${pauseOnHover && "hover:[animation-play-state:paused]"}`}
       >
         {items.map((item, idx) => (
           <li key={idx} className="w-auto max-w-full">
@@ -107,17 +101,57 @@ export const InfiniteMovingCards = ({
                 <p className="text-sm mt-2 text-white/70">{item.title}</p>
               </div>
             ) : (
-              <div className="flex h-[6rem] w-[12rem] items-center justify-center rounded-2xl border border-slate-800 bg-black px-8 py-4">
-                <img
-                  src={item.quote}
-                  alt={item.name}
-                  className="max-h-full max-w-full object-contain"
-                />
+              <div className="group relative overflow-hidden h-[6rem] w-[12rem] rounded-2xl border border-slate-800 bg-black/50 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-slate-500 hover:shadow-2xl flex-shrink-0">
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <img
+                    src={item.quote}
+                    alt={item.name || "Technology logo"}
+                    className="h-12 w-12 object-contain filter brightness-90 group-hover:brightness-110 transition-all duration-300 group-hover:scale-110"
+                  />
+                </div>
+
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-60 blur-xl transition-all duration-300 -z-10"></div>
               </div>
             )}
           </li>
         ))}
       </ul>
+
+      <style jsx>{`
+        @keyframes scrollLeft {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        @keyframes scrollRight {
+          0% {
+            transform: translateX(-50%);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+
+        .animate-scrollLeft {
+          animation: scrollLeft linear infinite;
+        }
+
+        .animate-scrollRight {
+          animation: scrollRight linear infinite;
+        }
+
+        .animate-scroll {
+          animation: scrollLeft linear infinite;
+        }
+      `}</style>
     </div>
   );
 };
