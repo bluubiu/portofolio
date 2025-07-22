@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useHasMounted } from "@/lib/useHasMounted";
 
 type TextGenerateEffectProps = {
   words: string;
@@ -19,43 +20,37 @@ export const TextGenerateEffect = ({
 }: TextGenerateEffectProps) => {
   const [scope, animate] = useAnimate();
   const wordsArray = words.split(" ");
+  const hasMounted = useHasMounted();
 
   useEffect(() => {
-    animate(
-      "span",
-      { opacity: 1 },
-      {
-        duration: 2,
-        delay: stagger(0.2),
-      }
-    );
-  }, [animate]);
+    if (hasMounted) {
+      animate("span", { opacity: 1 }, { duration: 2, delay: stagger(0.2) });
+    }
+  }, [animate, hasMounted]);
 
-  const renderWords = () => {
-    return (
-      <motion.div ref={scope} className="flex flex-wrap gap-x-1">
-        {wordsArray.map((word, idx) => (
-          <motion.span
-            key={word + idx}
-            className={cn(
-              idx > threshold
-                ? `${colorAfterThreshold}`
-                : "dark:text-white text-black",
-              "opacity-0"
-            )}
-          >
-            {word}
-          </motion.span>
-        ))}
-      </motion.div>
-    );
-  };
+  if (!hasMounted) return null;
 
   return (
-    <div className={cn("font-bold", className)}>
-      <div className="my-4">
-        <div className="leading-snug tracking-wide">{renderWords()}</div>
-      </div>
-    </div>
+    <motion.div
+      ref={scope}
+      className={cn(
+        "flex flex-wrap gap-x-1 justify-center text-center font-bold leading-snug tracking-wide my-4",
+        className
+      )}
+    >
+      {wordsArray.map((word, idx) => (
+        <motion.span
+          key={word + idx}
+          className={cn(
+            idx > threshold
+              ? colorAfterThreshold
+              : "dark:text-white text-black",
+            "opacity-0"
+          )}
+        >
+          {word}
+        </motion.span>
+      ))}
+    </motion.div>
   );
 };
