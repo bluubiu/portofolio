@@ -12,7 +12,7 @@ export const InfiniteMovingCards = ({
   className,
 }: {
   items: {
-    quote: string; // image src
+    quote: string; 
     name: string;
     title: string;
   }[];

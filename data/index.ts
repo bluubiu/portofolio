@@ -87,7 +87,7 @@ export const projects = [
     id: 3,
     title: "WhosThat - Game Based On Website",
     des: "A game-based website that allows users to play the popular Undercover game offline with friends.",
-    img: "/whosThat.png",
+    img: "/wt.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/firebase.svg"],
     link: "https://whos-that.vercel.app/",
   },
