@@ -1,16 +1,16 @@
 export const navItems = [
-  { name: "Home", link: "#home" },
-  { name: "About", link: "#about" },
-  { name: "Projects", link: "#projects" },
-  { name: "Certificate", link: "#certificate" },
-  { name: "Contact", link: "#contact" },
+  { name: "Beranda", link: "#home" },
+  { name: "Tentang", link: "#about" },
+  { name: "Proyek", link: "#projects" },
+  { name: "Sertifikat", link: "#certificate" },
+  { name: "Kontak", link: "#contact" },
 ];
 
 export const gridItems = [
   {
     id: 1,
-    title: "Collaboration that sparks results",
-    description: "I believe in open, iterative communication with clients.",
+    title: "Kolaborasi yang membuahkan hasil",
+    description: "Saya percaya pada komunikasi yang terbuka dan iteratif dengan klien.",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
     titleClassName: "justify-end",
@@ -19,7 +19,7 @@ export const gridItems = [
   },
   {
     id: 2,
-    title: "Seamless collaboration across time zones",
+    title: "Kolaborasi tanpa hambatan di berbagai zona waktu",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -29,8 +29,8 @@ export const gridItems = [
   },
   {
     id: 3,
-    title: "My tech stack",
-    description: "I constantly try to improve",
+    title: "Tech stack saya",
+    description: "Saya terus berusaha untuk berkembang",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-center",
@@ -39,7 +39,7 @@ export const gridItems = [
   },
   {
     id: 4,
-    title: "Driven by curiosity, fueled by code",
+    title: "Didorong oleh rasa ingin tahu, digerakkan oleh kode",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
@@ -49,7 +49,7 @@ export const gridItems = [
   },
   {
     id: 5,
-    title: "Create a website that suits you",
+    title: "Buat website yang sesuai dengan Anda",
     description: " ",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
@@ -59,7 +59,7 @@ export const gridItems = [
   },
   {
     id: 6,
-    title: "Ready to craft something extraordinary together?",
+    title: "Siap untuk menciptakan sesuatu yang luar biasa bersama?",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
@@ -72,62 +72,63 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "ProLearn - Online Learning Platform",
-    des: "A modern online learning platform with a focus on user experience and performance, built with the latest technologies.",
+    title: "MediUKS - Website Peminjaman Alat UKS",
+    des: "MediUKS adalah aplikasi berbasis web untuk mengelola dan memfasilitasi peminjaman alat kesehatan (UKS) di SMKN 1 Kepanjen. Aplikasi ini dibuat untuk menggantikan metode pencatatan manual sebelumnya, dengan tujuan meningkatkan efisiensi, akurasi, dan aksesibilitas bagi siswa dan tim UKS.",
+    img: "/management_peminjaman_uks.png",
+    iconLists: ["/re.svg", "/tail.svg", "/js.svg", "/mysql.svg", "/laravel.svg"],
+    link: "https://github.com/bluubiu/Frontend-UKK.git",
+  },
+  {
+    id: 2,
+    title: "Tiga Warna - Website POS Penjualan Cat",
+    des: "Tiga Warna adalah aplikasi berbasis web untuk mengelola dan memfasilitasi penjualan cat. Aplikasi ini dibuat untuk menggantikan metode pencatatan manual sebelumnya, dengan tujuan meningkatkan efisiensi, akurasi, dan aksesibilitas bagi pelanggan dan tim Tiga Warna.",
+    img: "/management_system_printing.png",
+    iconLists: ["/re.svg", "/tail.svg", "/js.svg", "/firebase.svg"],
+    link: "https://github.com/bluubiu/trigara.git",
+  },
+  {
+    id: 3,
+    title: "ProLearn - Platform Pembelajaran Online",
+    des: "Platform pembelajaran online modern dengan fokus pada pengalaman pengguna dan performa, dibangun dengan teknologi terbaru.",
     img: "/ProLearn.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/js.svg"],
   },
   {
-    id: 2,
-    title: "Surf Lesson - Website for Surf Lessons",
-    des: "A platform connecting surf instructors with students for lessons in Bali.",
+    id: 4,
+    title: "Surf Lesson - Website untuk Kursus Selancar",
+    des: "Platform yang menghubungkan instruktur selancar dengan siswa untuk kursus di Bali.",
     img: "/surf.png",
     iconLists: ["wordpress.svg", "/css.svg"],
   },
+
   {
-    id: 3,
-    title: "WhosThat - Game Based On Website",
-    des: "A game-based website that allows users to play the popular Undercover game offline with friends.",
+    id: 5,
+    title: "WhosThat - Game Berbasis Website",
+    des: "Website berbasis game yang memungkinkan pengguna bermain game Undercover yang populer secara offline bersama teman.",
     img: "/wt.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/firebase.svg"],
     link: "https://whos-that.vercel.app/",
   },
   {
-    id: 4,
-    title: "Tetris - Classic Game Reimagined",
-    des: "Recreated the classic Tetris game using modern web technologies, featuring smooth animations and responsive design.",
+    id: 6,
+    title: "Tetris - Game Klasik yang Dibuat Ulang",
+    des: "Membuat ulang game klasik Tetris menggunakan teknologi web modern, menampilkan animasi yang halus dan desain yang responsif.",
     img: "/tetris.png",
     iconLists: ["/re.svg", "/tail.svg", "/js.svg", "/firebase.svg"],
     link: "https://tetris-azure-nine.vercel.app/",
   },
   {
-    id: 5,
-    title: "Basketball - Website created In Native Language",
-    des: "Recreated the classic Basketball website using native language web technologies, featuring smooth animations and responsive design.",
-    img: "/basket.png",
-    iconLists: ["/html5.svg", "/css.svg", "/js.svg"],
-    link: "https://baskeball.vercel.app/",
-  },
-  {
-    id: 6,
-    title: "The D-seven - E-commerce Website",
-    des: "Recreated the classic Donut & Drink website using native language web technologies, featuring smooth animations and satisfying user interface.",
-    img: "/dseven.png",
-    iconLists: ["/html5.svg", "/css.svg", "/js.svg"],
-    link: "https://product-pi-two.vercel.app/",
-  },
-  {
     id: 7,
-    title: "E-commerce Website Design",
-    des: "create an e-commerce website design for android from figma by considering user interface and experience.",
+    title: "Desain Website E-commerce",
+    des: "Membuat desain website e-commerce untuk Android dari Figma dengan mempertimbangkan antarmuka dan pengalaman pengguna (UI/UX).",
     img: "/ecommerce.png",
     iconLists: ["/figma.svg"],
     link: "https://www.figma.com/proto/edtLCrYg7azM20nioXcmRi/Hairunn?node-id=2-3&starting-point-node-id=2%3A3&t=rAF1Uj5cd0gPCUc3-1",
   },
   {
     id: 8,
-    title: "UPTPTKK - Recreate Website Design",
-    des: "Redesigning the website. Considering color palette, layout, and design structure",
+    title: "UPTPTKK - Desain Ulang Website",
+    des: "Mendesain ulang website. Mempertimbangkan palet warna, tata letak, dan struktur desain.",
     img: "/upt.png",
     iconLists: ["/figma.svg"],
     link: "https://www.figma.com/proto/60m6rZ460kyJsbHb5i9kcD/Tugas-Akhir---Hairunisa-asanti?node-id=110-222&t=iDo1usSVqZ29h3Er-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
@@ -137,51 +138,51 @@ export const projects = [
 export const certificates = [
   {
     quote: "/sertifikat_AI.jpg",
-    name: "Provincial AI Competition Participant",
+    name: "Peserta Lomba AI Tingkat Provinsi",
     title:
-      "Awarded for participation in the Artificial Intelligence category at the 33rd Provincial Level Student Competency Competition (LKS) in East Java, organized by the East Java Provincial Education Office.",
+      "Penghargaan atas partisipasi dalam kategori Artificial Intelligence pada Lomba Kompetensi Siswa (LKS) Tingkat Provinsi ke-33 di Jawa Timur, yang diselenggarakan oleh Dinas Pendidikan Provinsi Jawa Timur.",
   },
   {
     quote: "/sertifikat2.jpg",
-    name: "COBIT 2019 Workshop Attendee",
+    name: "Peserta Workshop COBIT 2019",
     title:
-      "Participated in the workshop 'COBIT 2019: IT Strategies to Build Trust with Directors and Companies Through Measurable Resource Governance,' held in Yogyakarta (2 JPL hours).",
+      "Berpartisipasi dalam workshop 'COBIT 2019: Strategi TI Membangun Kepercayaan Direksi dan Perusahaan Melalui Tata Kelola Sumber Daya Terukur,' yang diselenggarakan di Yogyakarta (2 Jam Pelajaran).",
   },
   {
     quote: "/sertifikat_WD.jpg",
-    name: "Certified Web Designer (Level IV IQF)",
+    name: "Sertifikasi Web Designer (Level IV KKNI)",
     title:
-      "Officially recognized as competent in Web Design (Level IV of the Indonesian Qualification Framework) by the Competency Certification Board of Information and Communication Technologies.",
+      "Secara resmi diakui kompeten dalam Web Design (Level IV Kerangka Kualifikasi Nasional Indonesia) oleh Badan Nasional Sertifikasi Profesi (BNSP) bidang Teknologi Informasi dan Komunikasi.",
   },
   {
     quote: "/Data_Visualization.png",
-    name: "Data Visualization Course Completion",
+    name: "Penyelesaian Kursus Data Visualization",
     title:
-      "Successfully completed the 'Data Visualization' course on Kaggle, mastering techniques to present data insights effectively.",
+      "Berhasil menyelesaikan kursus 'Data Visualization' di Kaggle, menguasai teknik untuk menyajikan insight data secara efektif.",
   },
   {
     quote: "/MachineLearning.png",
-    name: "Intermediate Machine Learning Course Completion",
+    name: "Penyelesaian Kursus Intermediate Machine Learning",
     title:
-      "Completed Kaggle's 'Intermediate Machine Learning' course, covering advanced topics in model evaluation, feature engineering, and pipelines.",
+      "Menyelesaikan kursus 'Intermediate Machine Learning' dari Kaggle, mencakup topik lanjutan mengenai evaluasi model, feature engineering, dan pipelines.",
   },
   {
     quote: "/ubig.jpg",
-    name: "Chatbot AI Workshop & Industrial Visit",
+    name: "Workshop Chatbot AI & Kunjungan Industri",
     title:
-      "Participated in a NoBox AI Chatbot Development Workshop and industrial visit at PT Universal Big Data (UBIG), gaining hands-on experience in AI applications.",
+      "Berpartisipasi dalam Workshop Pengembangan Chatbot NoBox AI dan kunjungan industri di PT Universal Big Data (UBIG), mendapatkan pengalaman langsung dalam aplikasi AI.",
   },
   {
     quote: "/wd1.jpg",
-    name: "National Accelerated Web Design Certification",
+    name: "Sertifikasi Akselerasi Web Design Nasional",
     title:
-      "Awarded for completing the accelerated Web Design certification program (KKNI National Standard) organized by the East Java Provincial Technical and Vocational Development Unit.",
+      "Penghargaan atas penyelesaian program sertifikasi akselerasi Web Design (Standar Nasional KKNI) yang diselenggarakan oleh Unit Pelaksana Teknis Pelatihan Kerja (UPTPK) Provinsi Jawa Timur.",
   },
   {
     quote: "/wd2.jpg",
-    name: "Software Engineering/Web Design Incubator Program",
+    name: "Program Inkubator Rekayasa Perangkat Lunak/Web Design",
     title:
-      "Recognized for participation in the 3rd Cohort of the SMK/SMA Competency Development Program (Incubator) in Software Engineering/Web Design by East Java's Vocational Development Unit.",
+      "Diakui atas partisipasi dalam Angkatan ke-3 Program Pengembangan Kompetensi SMK/SMA (Inkubator) bidang Rekayasa Perangkat Lunak/Web Design oleh Unit Pelaksana Teknis Pelatihan Kerja Jawa Timur.",
   },
 ];
 
@@ -206,29 +207,29 @@ export const companies = [
 export const workExperience = [
   {
     id: 1,
-    title: "Frontend & Game Engineer Intern",
-    desc: "Played a role in building an interactive React.js web platform, boosting interactivity and usability",
+    title: "Magang Frontend & Game Engineer",
+    desc: "Berperan dalam membangun platform web React.js interaktif, meningkatkan interaktivitas dan kegunaan.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
-    title: "WordPress Website For client",
-    desc: "Designed and developed a responsive WordPress website, ensuring seamless navigation and client-specific customization",
+    title: "Website WordPress untuk Klien",
+    desc: "Merancang dan mengembangkan website WordPress yang responsif, memastikan navigasi yang lancar dan kustomisasi sesuai kebutuhan klien.",
     className: "md:col-span-2",
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
-    title: "National Web Design Certification",
-    desc: "Completed the National KKNI-Based Certification with top ranking in Web Design, demonstrating advanced design and implementation skills.",
+    title: "Sertifikasi Web Design Nasional",
+    desc: "Menyelesaikan Sertifikasi Nasional Berbasis KKNI dengan peringkat atas di bidang Web Design, menunjukkan keterampilan desain dan implementasi tingkat lanjut.",
     className: "md:col-span-2",
     thumbnail: "/exp3.svg",
   },
   {
     id: 4,
-    title: "Competition Training: Web Design & AI",
-    desc: "Completed a year-long intensive training in Web Design and AI for LKS Competition, earning 2nd place at the district level and Top 10 at the provincial level in AI, while developing advanced technical and problem-solving skills.",
+    title: "Pelatihan Lomba: Web Design & AI",
+    desc: "Menyelesaikan pelatihan intensif selama satu tahun dalam bidang Web Design dan AI untuk Lomba LKS, meraih juara 2 di tingkat kabupaten dan Top 10 di tingkat provinsi dalam bidang AI, sekaligus mengembangkan keterampilan teknis dan pemecahan masalah tingkat lanjut.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
   },

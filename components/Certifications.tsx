@@ -11,7 +11,7 @@ const Certificate = () => {
       className="py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
       <h1 className="heading text-center">
-        My journey of <span className="text-purple">certifications</span>
+        Perjalanan <span className="text-purple">sertifikasi saya</span>
       </h1>
 
       <div className="flex flex-col items-center gap-16 mt-12 w-full">

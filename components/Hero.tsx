@@ -45,27 +45,27 @@ const Hero = () => {
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] text-center md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            Crafting Experiences
+            Menciptakan Pengalaman
           </p>
 
           {showEffects ? (
             <TextGenerateEffect
-              words="Turning Ideas into Intuitive User Experiences"
+              words="Mengubah Ide Menjadi Pengalaman Pengguna yang Intuitif"
               className="text-center text-[40px] md:text-5xl lg:text-6xl"
             />
           ) : (
             <h1 className="text-center text-[40px] md:text-5xl lg:text-6xl font-bold">
-              Turning Ideas into Intuitive User Experiences
+              Mengubah Ide Menjadi Pengalaman Pengguna yang Intuitif
             </h1>
           )}
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi! I'm Hairunisa Asanti, a FrontEnd developer.
+            Hai! Saya Hairunisa Asanti, seorang FrontEnd developer.
           </p>
 
           <a href="#about">
             <MagicButton
-              title="Show my work"
+              title="Lihat karya saya"
               icon={<FaLocationArrow />}
               position="right"
             />

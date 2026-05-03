@@ -4,11 +4,11 @@ import { useState, useRef, useEffect } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 import { cn } from "@/lib/utils";
 import animationData from "@/data/confetti.json";
-import WorldMap from "./world-map";
-import GridGlobe from "./GridGlobe";
 import dynamic from "next/dynamic";
 import MagicButton from "../MagicButton";
 
+const WorldMap = dynamic(() => import("./world-map"), { ssr: false });
+const GridGlobe = dynamic(() => import("./GridGlobe"), { ssr: false });
 const LottiePlayer = dynamic(() => import("./LottiePlayerClient"), {
   ssr: false,
 });

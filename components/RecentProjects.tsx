@@ -9,8 +9,8 @@ const RecentProjects = () => {
   return (
     <div className="py-20" id="projects">
       <h1 className="heading">
-        A small selection of{" "}
-        <span className="text-purple">recent projects</span>
+        Beberapa pilihan{" "}
+        <span className="text-purple">proyek terbaru</span>
       </h1>
 
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
@@ -27,7 +27,7 @@ const RecentProjects = () => {
             >
               <ThreeDCard>
                 <PinContainer
-                  title="View Project"
+                  title="Lihat Proyek"
                   href={item.link}
                   className="lg:w-96 w-[80vw] h-full"
                 >
@@ -76,7 +76,7 @@ const RecentProjects = () => {
 
                     <div className="flex justify-center items-center">
                       <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                        Check Live Site
+                        Kunjungi Situs
                       </p>
                       <FaLocationArrow className="ms-3" color="#CBACF9" />
                     </div>
