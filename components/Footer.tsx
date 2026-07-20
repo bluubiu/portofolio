@@ -17,14 +17,14 @@ const Footer = () => {
 
       <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw]">
-          Siap membawa kehadiran digital <span className="text-purple">Anda</span> ke tingkat selanjutnya?
+          Ready to take your digital presence <span className="text-purple">to the next level?</span>
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center">
-          Hubungi saya hari ini dan mari diskusikan bagaimana saya dapat membantu Anda mencapai tujuan Anda.
+          Reach out today and let's discuss how I can help you achieve your goals.
         </p>
         <a href="mailto:nisaasanti8@gmail.com">
           <MagicButton
-            title="Mari terhubung"
+            title="Let's Connect"
             icon={<FaLocationArrow />}
             position="right"
           />
@@ -32,7 +32,7 @@ const Footer = () => {
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
         <p className="md:text-base text-sm md:font-normal font-light">
-          Hak Cipta © 2025 Hairunisa Asanti | Hak cipta dilindungi.
+          Copyright © 2025 Hairunisa Asanti | All rights reserved.
         </p>
 
         <div className="flex items-center md:gap-3 gap-6">

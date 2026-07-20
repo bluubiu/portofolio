@@ -11,8 +11,13 @@ const Certificate = () => {
       className="py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
       <h1 className="heading text-center">
-        Perjalanan <span className="text-purple">sertifikasi saya</span>
+        My <span className="text-purple">Certification Journey</span>
       </h1>
+      <p className="mt-4 text-center text-sm sm:text-base text-white/70">
+        A showcase of certificates and achievements with Indonesian
+        translations.
+        <span className="block text-white/50">Perjalanan sertifikasi saya</span>
+      </p>
 
       <div className="flex flex-col items-center gap-16 mt-12 w-full">
         <div className="w-full flex justify-center">

@@ -12,9 +12,11 @@ export const InfiniteMovingCards = ({
   className,
 }: {
   items: {
-    quote: string; 
-    name: string;
-    title: string;
+    quote: string;
+    name?: string;
+    name_id?: string;
+    title?: string;
+    title_id?: string;
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
@@ -81,9 +83,21 @@ export const InfiniteMovingCards = ({
                   <span className="block text-base sm:text-lg md:text-xl font-bold text-white">
                     {item.name}
                   </span>
-                  <span className="block text-xs sm:text-sm md:text-base text-white/70">
-                    {item.title}
-                  </span>
+                  {item.name_id ? (
+                    <span className="block text-xs sm:text-sm text-white/50 mt-1">
+                      {item.name_id}
+                    </span>
+                  ) : null}
+                  {item.title ? (
+                    <span className="block text-xs sm:text-sm md:text-base text-white/70 mt-2">
+                      {item.title}
+                    </span>
+                  ) : null}
+                  {item.title_id ? (
+                    <span className="block text-xs sm:text-sm text-white/50 mt-1">
+                      {item.title_id}
+                    </span>
+                  ) : null}
                 </div>
               </div>
             ) : (

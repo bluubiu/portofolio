@@ -13,13 +13,13 @@ const Approach: React.FC = () => {
   return (
     <section className="w-full py-20">
       <h1 className="heading">
-        Pendekatan <span className="text-purple">Saya</span>
+        My <span className="text-purple">Approach</span>
       </h1>
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
         <Card
-          title="Pemetaan Visi & Strategi"
-          icon={<AceternityIcon order="Fase 1" />}
-          des="Kita akan bekerja sama untuk merumuskan tujuan situs Anda, target audiens, dan fungsionalitas yang penting. Mulai dari alur pengguna hingga struktur konten, kita siapkan peta sebelum melangkah."
+          title="Vision Mapping & Strategy"
+          icon={<AceternityIcon order="Phase 1" />}
+          des="We'll work together to define your website's goals, target audience, and key functionalities. From user flows to content structure, we map everything out before taking a single step forward."
         >
           <CanvasRevealEffect
             animationSpeed={5.1}
@@ -27,9 +27,9 @@ const Approach: React.FC = () => {
           />
         </Card>
         <Card
-          title="Pembuatan & Pengecekan"
-          icon={<AceternityIcon order="Fase 2" />}
-          des="Setelah rencana disetujui, saya akan mulai membangunnya. Dari wireframe hingga kode yang rapi dan fungsional, Anda akan mendapatkan pembaruan di setiap tahapannya."
+          title="Development & Progress Reviews"
+          icon={<AceternityIcon order="Phase 2" />}
+          des="Once the plan is approved, I'll start building it out. From wireframes to clean, functional code, you'll receive regular updates at every stage of the development process."
         >
           <CanvasRevealEffect
             animationSpeed={3}
@@ -42,9 +42,9 @@ const Approach: React.FC = () => {
           />
         </Card>
         <Card
-          title="Penyelesaian & Peluncuran"
-          icon={<AceternityIcon order="Fase 3" />}
-          des="Waktunya mewujudkan semuanya. Dengan desain yang telah disetujui, saya mengubahnya menjadi kode fungsional, membangun situs Anda dari awal hingga siap diluncurkan."
+          title="Finalization & Launch"
+          icon={<AceternityIcon order="Phase 3" />}
+          des="Time to bring it all to life. With the approved designs in hand, I transform them into fully functional code — building your site from the ground up until it's ready to go live."
         >
           <CanvasRevealEffect
             animationSpeed={3}

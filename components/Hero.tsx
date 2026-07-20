@@ -15,7 +15,7 @@ const Hero = () => {
 
   return (
     <div className="pb-20 pt-36 relative" id="home">
-      {/* Efek Spotlight yang berat */}
+      {/* Heavy spotlight effects */}
       {showEffects && (
         <div>
           <Spotlight
@@ -41,31 +41,31 @@ const Hero = () => {
         />
       </div>
 
-      {/* Konten utama */}
+      {/* Main content */}
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] text-center md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            Menciptakan Pengalaman
+            Creating Experiences
           </p>
 
           {showEffects ? (
             <TextGenerateEffect
-              words="Mengubah Ide Menjadi Pengalaman Pengguna yang Intuitif"
+              words="Transforming Ideas into Intuitive User Experiences"
               className="text-center text-[40px] md:text-5xl lg:text-6xl"
             />
           ) : (
             <h1 className="text-center text-[40px] md:text-5xl lg:text-6xl font-bold">
-              Mengubah Ide Menjadi Pengalaman Pengguna yang Intuitif
+              Transforming Ideas into Intuitive User Experiences
             </h1>
           )}
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hai! Saya Hairunisa Asanti, seorang FrontEnd developer.
+            Hi! I&apos;m Hairunisa Asanti, a Front-End Developer.
           </p>
 
           <a href="#about">
             <MagicButton
-              title="Lihat karya saya"
+              title="View My Work"
               icon={<FaLocationArrow />}
               position="right"
             />

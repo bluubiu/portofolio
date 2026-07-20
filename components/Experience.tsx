@@ -8,7 +8,7 @@ const Experience = () => {
   return (
     <section id="experience" className="py-20 w-full">
       <h1 className="heading text-center">
-        Pengalaman <span className="text-purple">Saya</span>
+        My <span className="text-purple">Experience</span>
       </h1>
 
       <div className="w-full mt-20 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-10">
