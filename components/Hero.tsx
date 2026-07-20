@@ -45,22 +45,22 @@ const Hero = () => {
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] text-center md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            Creating Experiences
+            Transforming
           </p>
 
           {showEffects ? (
             <TextGenerateEffect
-              words="Transforming Ideas into Intuitive User Experiences"
+              words="Ideas into scalable, end-to-end solutions"
               className="text-center text-[40px] md:text-5xl lg:text-6xl"
             />
           ) : (
             <h1 className="text-center text-[40px] md:text-5xl lg:text-6xl font-bold">
-              Transforming Ideas into Intuitive User Experiences
+              Ideas into scalable, end-to-end solutions
             </h1>
           )}
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi! I&apos;m Hairunisa Asanti, a Front-End Developer.
+            Hi! I&apos;m Hairunisa Asanti, a Full-Stack Developer.
           </p>
 
           <a href="#about">

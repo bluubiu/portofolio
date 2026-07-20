@@ -146,83 +146,57 @@ export const certificates = [
   {
     quote: "/sertifikat_AI.jpg",
     name: "Provincial AI Competition Participant",
-    name_id: "Peserta Lomba AI Tingkat Provinsi",
     title:
       "Awarded for participation in the Artificial Intelligence category at the 33rd Provincial-level LKS competition in East Java, organized by the East Java Provincial Education Department.",
-    title_id:
-      "Penghargaan atas partisipasi dalam kategori Artificial Intelligence pada Lomba Kompetensi Siswa (LKS) Tingkat Provinsi ke-33 di Jawa Timur, yang diselenggarakan oleh Dinas Pendidikan Provinsi Jawa Timur.",
   },
   {
     quote: "/sertifikat2.jpg",
     name: "COBIT 2019 Workshop Participant",
-    name_id: "Peserta Workshop COBIT 2019",
     title:
       "Participated in the 'COBIT 2019: IT Strategy for Building Board and Corporate Trust through Measurable Resource Governance' workshop held in Yogyakarta (2 class hours).",
-    title_id:
-      "Berpartisipasi dalam workshop 'COBIT 2019: Strategi TI Membangun Kepercayaan Direksi dan Perusahaan Melalui Tata Kelola Sumber Daya Terukur,' yang diselenggarakan di Yogyakarta (2 Jam Pelajaran).",
+
   },
   {
     quote: "/sertifikat_WD.jpg",
     name: "Web Designer Certification (KKNI Level IV)",
-    name_id: "Sertifikasi Web Designer (Level IV KKNI)",
     title:
       "Officially recognized as competent in Web Design (KKNI Level IV) by the National Professional Certification Agency (BNSP) in Information and Communication Technology.",
-    title_id:
-      "Secara resmi diakui kompeten dalam Web Design (Level IV Kerangka Kualifikasi Nasional Indonesia) oleh Badan Nasional Sertifikasi Profesi (BNSP) bidang Teknologi Informasi dan Komunikasi.",
   },
   {
     quote: "/Data_Visualization.png",
     name: "Data Visualization Course Completion",
-    name_id: "Penyelesaian Kursus Data Visualization",
     title:
       "Successfully completed the 'Data Visualization' course on Kaggle, mastering techniques for presenting data insights effectively.",
-    title_id:
-      "Berhasil menyelesaikan kursus 'Data Visualization' di Kaggle, menguasai teknik untuk menyajikan insight data secara efektif.",
   },
   {
     quote: "/MachineLearning.png",
     name: "Intermediate Machine Learning Course Completion",
-    name_id: "Penyelesaian Kursus Intermediate Machine Learning",
     title:
       "Finished the Kaggle 'Intermediate Machine Learning' course, covering advanced topics in model evaluation, feature engineering, and pipelines.",
-    title_id:
-      "Menyelesaikan kursus 'Intermediate Machine Learning' dari Kaggle, mencakup topik lanjutan mengenai evaluasi model, feature engineering, dan pipelines.",
   },
   {
     quote: "/ubig.jpg",
     name: "AI Chatbot Workshop & Industry Visit",
-    name_id: "Workshop Chatbot AI & Kunjungan Industri",
     title:
       "Participated in the NoBox AI Chatbot development workshop and an industry visit at PT Universal Big Data (UBIG), gaining practical experience in AI applications.",
-    title_id:
-      "Berpartisipasi dalam Workshop Pengembangan Chatbot NoBox AI dan kunjungan industri di PT Universal Big Data (UBIG), mendapatkan pengalaman langsung dalam aplikasi AI.",
   },
   {
     quote: "/wd1.jpg",
     name: "National Web Design Acceleration Certification",
-    name_id: "Sertifikasi Akselerasi Web Design Nasional",
     title:
       "Awarded for completing the National KKNI-standard Web Design acceleration certification program organized by the UPTPK East Java.",
-    title_id:
-      "Penghargaan atas penyelesaian program sertifikasi akselerasi Web Design (Standar Nasional KKNI) yang diselenggarakan oleh Unit Pelaksana Teknis Pelatihan Kerja (UPTPK) Provinsi Jawa Timur.",
   },
   {
     quote: "/wd2.jpg",
     name: "Software Engineering / Web Design Incubator Program",
-    name_id: "Program Inkubator Rekayasa Perangkat Lunak/Web Design",
     title:
       "Recognized for participation in the 3rd cohort of the SMK/SMA Competency Development Incubator Program in Software Engineering/Web Design by UPTPK East Java.",
-    title_id:
-      "Diakui atas partisipasi dalam Angkatan ke-3 Program Pengembangan Kompetensi SMK/SMA (Inkubator) bidang Rekayasa Perangkat Lunak/Web Design oleh Unit Pelaksana Teknis Pelatihan Kerja Jawa Timur.",
   },
   {
     quote: "/AI2.jpeg",
     name: "Second Place – AI Competition",
-    name_id: "Juara II Lomba AI",
     title:
       "Awarded for second place in the Artificial Intelligence category of the LKS DIKMEN competition at Kabupaten Malang, 2025.",
-    title_id:
-      "Penghargaan juara II kategori Artificial Intelligence dalam Lomba Kompetensi Siswa (LKS) DIKMEN tingkat Kabupaten Malang, 2025.",
   },
   {
     quote: "/festika.jpeg",
@@ -285,7 +259,7 @@ export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
-    link: "https://github.com/edgrce",
+    link: "https://github.com/bluubiu",
   },
   {
     id: 2,
